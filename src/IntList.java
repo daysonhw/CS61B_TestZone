@@ -13,7 +13,8 @@ public class IntList {
         IntList p = this;
         while (p != null) {
             a++;
-            p = p.next; //this.next doesn't equal p.next
+            p = p.next;
+            //this.next doesn't equal p.next
         }
         return a;
     }
@@ -29,8 +30,9 @@ public class IntList {
         if (index==0) {
             return value;
         }
-        if (index != 0 && next == null | index < 0) {
-            return 0;   //int couldn't return null
+        if (next == null | index < 0) {
+            return 0;
+            //int couldn't return null
         }
         return next.getValue(--index);
     }

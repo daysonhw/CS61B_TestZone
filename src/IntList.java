@@ -19,20 +19,20 @@ public class IntList {
     }
 
     public int getLength1() {
-        if (this.next == null) {
+        if (next == null) {
             return 1;
         }
-        return 1 + this.next.getLength1();
+        return 1 + next.getLength1();
     }
 
     public int getValue(int index) {
         if (index==0) {
             return value;
         }
-        if (index != 0 && this.next == null | index < 0) {
+        if (index != 0 && next == null | index < 0) {
             return 0;   //int couldn't return null
         }
-        return this.next.getValue(--index);
+        return next.getValue(--index);
     }
 
     public static void main(String[] args) {

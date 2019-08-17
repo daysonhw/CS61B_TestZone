@@ -14,7 +14,7 @@ public class IntList {
         while (p != null) {
             a++;
             p = p.next;
-            //this.next doesn't equal p.next
+            /*this.next doesn't equal p.next*/
         }
         return a;
     }
@@ -32,7 +32,7 @@ public class IntList {
         }
         if (next == null | index < 0) {
             return 0;
-            //int couldn't return null
+            /*int couldn't return null/*/
         }
         return next.getValue(--index);
     }

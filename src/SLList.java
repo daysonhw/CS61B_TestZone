@@ -16,46 +16,44 @@ public class SLList {
 
 
         }
-
-        void addLast(int x) {
-            if (next != null) {
-                next.addLast(x);
-                return;
-            }
-            next = new IntNode(x, null);
-        }
-
     }
 
-    /**Create sentinal as a middleman to operate data in IntNode */
-    private IntNode sentinal;
+    /**Create sentinel as a middleman to operate data in IntNode */
+    private IntNode sentinel;
     private int size;
 
     public SLList() {
         size = 1;
-        sentinal = new IntNode();
-        sentinal.next = new IntNode();
+        sentinel = new IntNode();
+        sentinel.next = new IntNode();
     }
 
     public SLList(int x, SLList s) {
-        sentinal = new IntNode();
+        sentinel = new IntNode();
         if (s != null) {
             size = 1 + s.size;
-            s.sentinal.next = new IntNode(x, s.sentinal.next);
+            s.sentinel.next = new IntNode(x, s.sentinel.next);
         } else {
             size = 1;
         }
-        sentinal.next = new IntNode(x, null);
+        sentinel.next = new IntNode(x, null);
     }
 
     public void addFirst(int x) {
         size++;
-        sentinal.next = new IntNode(x, sentinal.next.next);
+        sentinel.next = new IntNode(x, sentinel.next.next);
     }
-    /**This method calls the method of IntNode*/
-    public void addLast(int x){
+
+    public void addLast(int x) {
         size++;
-        sentinal.next.addLast(x);
+        if (sentinel.next != null) {
+            IntNode p = sentinel.next;
+            while (p.next != null) {
+                p = p.next;
+            }
+            p.next = new IntNode(x, null);
+        }
+        sentinel.next = new IntNode(x, null);
     }
 
     public int getSize() {

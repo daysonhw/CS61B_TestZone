@@ -1,10 +1,10 @@
 public class IntList {
-    public int value;
+    public int element;
     public IntList next;
 
     public  IntList(int a, IntList p) {
-        //set a = value, p = next Intlist
-        this.value = a;
+        //set a = element, p = next Intlist
+        this.element = a;
         this.next = p;
     }
 
@@ -26,15 +26,15 @@ public class IntList {
         return 1 + next.getLength1();
     }
 
-    public int getValue(int index) {
+    public int getelement(int index) {
         if (index==0) {
-            return value;
+            return element;
         }
         if (next == null | index < 0) {
             return 0;
             /*int couldn't return null/*/
         }
-        return next.getValue(--index);
+        return next.getelement(--index);
     }
 
     public static void main(String[] args) {
@@ -42,6 +42,6 @@ public class IntList {
         IntList p0 = new IntList(5, p1);
         System.out.println(p0.getLength());
         System.out.println(p0.getLength1());
-        System.out.println(p0.getValue(1));
+        System.out.println(p0.getelement(1));
     }
 }

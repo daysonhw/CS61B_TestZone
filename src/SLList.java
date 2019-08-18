@@ -2,16 +2,16 @@ public class SLList {
     /** Creating inner class that holds data
      * using static modifier help us save space*/
     private static class IntNode {
-        private int value;
+        private int element;
         private IntNode next;
 
         private IntNode(int x, IntNode y) {
-            value = x;
+            element = x;
             next = y;
         }
 
         private IntNode() {
-            value = 0;
+            element = 0;
             next = null;
 
 

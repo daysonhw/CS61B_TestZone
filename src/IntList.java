@@ -1,3 +1,4 @@
+@Deprecated
 public class IntList {
     public int element;
     public IntList next;

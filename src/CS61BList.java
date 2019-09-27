@@ -6,7 +6,6 @@
      Stuff getFirst();
      Stuff getLast();
      Stuff removeLast();
-     void insert(Stuff x, int position);
      int size();
      Stuff get(int i);
 }
